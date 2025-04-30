@@ -1,13 +1,12 @@
 import React from "react";
-import { FaHome } from "react-icons/fa";
 import { IoMdRefresh } from "react-icons/io";
-import { Link } from "react-router-dom";
+import {error_img} from "../../assets/error.png"
 
 const ErrorOccurred = () => {
   return (
     <section className="main-container dark:bg-dark-mode faint-white mr-2 rounded-lg p-4 transition-all duration-300 ease-in dark:text-white">
       <img
-        src="/error.png"
+        src={error_img}
         className="m-auto max-w-[80%] md:max-w-[50%] lg:max-w-[35%] xl:max-w-[30%]"
         alt=""
       />

@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: Poppins;
-  src: url(../Poppins-Regular.ttf);
+  src: url(assets/Poppins-Regular.ttf);
 }
 
 @utility faint-white {
@@ -76,7 +76,7 @@
 
 body {
   font-family: Poppins, sans-serif;
-  background-image: url(/img1.jpeg);
+  background-image: url(assets/img1.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

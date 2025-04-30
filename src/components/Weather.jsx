@@ -11,6 +11,13 @@ import { FiRefreshCw } from "react-icons/fi";
 import WeatherSkeleton from "./skeleton/WeatherSkeleton";
 import ErrorOccurred from "./error components/ErrorOccurred";
 import { Link } from "react-router-dom";
+import {dark_length} from "../assets/dark_length.svg"
+import {dark_temperature} from "../assets/dark_temperature.svg"
+import {length} from "../assets/length.svg"
+import {sunrise} from "../assets/sunrise.svg"
+import {sunset} from "../assets/sunset.svg"
+import {temperature} from "../assets/temperature.svg"
+
 
 momentDurationFormatSetup(moment);
 
@@ -46,6 +53,8 @@ const Weather = () => {
   if(errorMsg){
     return <ErrorOccurred/>
   }
+
+  const img = (name) => `${import.meta.env.BASE_URL}${name}`
 
   return (
     <>
@@ -150,7 +159,7 @@ const Weather = () => {
                     </h1>
                     <img
                       className="w-8 md:w-10"
-                      src={dark ? "/dark_temperature.svg" : "/temperature.svg"}
+                      src={dark ? dark_temperature : temperature}
                       alt=""
                     />
                   </div>
@@ -457,7 +466,7 @@ const Weather = () => {
                         </span>
                       </h2>
                     </div>
-                    <img src="/sunrise.svg" className="w-12 md:w-15 lg:w-12 xl:w-15" alt="" />
+                    <img src={sunrise} className="w-12 md:w-15 lg:w-12 xl:w-15" alt="" />
                   </div>
                   <div className="mb-2 flex min-h-[40%] min-w-[50%] break-inside-avoid items-center justify-between rounded-2xl px-4 py-2 shadow-sm/50 shadow-black">
                     <div>
@@ -469,7 +478,7 @@ const Weather = () => {
                         </span>
                       </h2>
                     </div>
-                    <img src="/sunset.svg" className="w-12 md:w-15 lg:w-12 xl:w-15" alt="" />
+                    <img src={sunset} className="w-12 md:w-15 lg:w-12 xl:w-15" alt="" />
                   </div>
                   <div className="flex min-w-[50%] break-inside-avoid flex-col items-start justify-between rounded-2xl px-4 py-2 shadow-sm/50 shadow-black">
                     <h1 className="md:text-lg lg:text-base xl:text-lg  dark:text-gray-400">
@@ -488,7 +497,7 @@ const Weather = () => {
                       </h2>
                       <img
                         className="w-15 xl:w-12 lg:w-12"
-                        src={dark ? "dark_length.svg" : "/length.svg"}
+                        src={dark ? dark_length : length}
                         alt=""
                       />
                     </div>

@@ -7,8 +7,8 @@ import { IoMdMoon } from "react-icons/io";
 import { MdSunny } from "react-icons/md";
 import { WeatherContext } from "../context/WeatherContext";
 import Lottie from "lottie-react";
-import menuAnimation from "../assets/menuV2.json";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import {menuV2} from "../assets/menuV2.json"
 
 const Sidebar = () => {
   const { dark, setDark } = useContext(WeatherContext);
@@ -45,7 +45,7 @@ const Sidebar = () => {
         <Lottie
           className={dark ? "lottie" : null}
           lottieRef={lottieRef}
-          animationData={menuAnimation}
+          animationData={menuV2}
           loop={false}
           autoplay={false}
         />

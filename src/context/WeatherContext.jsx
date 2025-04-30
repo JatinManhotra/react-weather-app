@@ -1,6 +1,11 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import moment from "moment-timezone";
 import useLocalStorage from "../hooks/useLocalStorage";
+import {img1} from "../assets/img1.jpeg";
+import {img2} from "../assets/img2.jpeg";
+import {img3} from "../assets/img3.jpeg";
+import {img4} from "../assets/img4.jpeg";
+import {img5} from "../assets/img5.jpeg";
 
 export const WeatherContext = createContext();
 
@@ -226,20 +231,20 @@ const WeatherContextProvider = ({ children }) => {
 
     if (includesAny(text, ["Sunny"])) {
       document.body.style.backgroundImage = isNight
-        ? "url(/img2.jpeg)"
-        : "url(/img1.jpeg)";
+        ? `url(${img2})`
+        : `url(${img1})`;
       return;
     }
 
     if (includesAny(text, ["Clear"])) {
       document.body.style.backgroundImage = isNight
-        ? "url(/img2.jpeg)"
-        : "url(/img1.jpeg)";
+      ? `url(${img2})`
+      : `url(${img1})`;
       return;
     }
 
     if (includesAny(text, ["Partly cloudy", "Cloudy", "Overcast", "cloud"])) {
-      document.body.style.backgroundImage = "url(/img5.jpeg)";
+      document.body.style.backgroundImage = `url(${img5})`;
       return;
     }
 
@@ -260,7 +265,7 @@ const WeatherContextProvider = ({ children }) => {
         "Moderate or heavy rain with thunder",
       ])
     ) {
-      document.body.style.backgroundImage = "url(/img3.jpeg)";
+      document.body.style.backgroundImage = `url(${img3})`;
       return;
     }
 
@@ -276,13 +281,13 @@ const WeatherContextProvider = ({ children }) => {
         "sleet"
       ])
     ) {
-      document.body.style.backgroundImage = "url(/img4.jpeg)";
+      document.body.style.backgroundImage = `url(${img4})`;
       return;
     }
 
     document.body.style.backgroundImage = isNight
-      ? "url(/img2.jpeg)"
-      : "url(/img1.jpeg)";
+    ? `url(${img2})`
+    : `url(${img1})`;
   }, [current, currentTime, forecast]);
 
   useEffect(() => {
