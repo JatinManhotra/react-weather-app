@@ -1,6 +1,6 @@
 import React from "react";
 import { IoMdRefresh } from "react-icons/io";
-import {error_img} from "../../assets/error.png"
+import error_img from "../../assets/error.png"
 
 const ErrorOccurred = () => {
   return (

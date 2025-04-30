@@ -11,12 +11,12 @@ import { FiRefreshCw } from "react-icons/fi";
 import WeatherSkeleton from "./skeleton/WeatherSkeleton";
 import ErrorOccurred from "./error components/ErrorOccurred";
 import { Link } from "react-router-dom";
-import {dark_length} from "../assets/dark_length.svg"
-import {dark_temperature} from "../assets/dark_temperature.svg"
-import {length} from "../assets/length.svg"
-import {sunrise} from "../assets/sunrise.svg"
-import {sunset} from "../assets/sunset.svg"
-import {temperature} from "../assets/temperature.svg"
+import dark_length from "../assets/dark_length.svg"
+import dark_temperature from "../assets/dark_temperature.svg"
+import length from "../assets/length.svg"
+import sunrise from "../assets/sunrise.svg"
+import sunset from "../assets/sunset.svg"
+import temperature from "../assets/temperature.svg"
 
 
 momentDurationFormatSetup(moment);

@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import moment from "moment-timezone";
 import useLocalStorage from "../hooks/useLocalStorage";
-import {img1} from "../assets/img1.jpeg";
-import {img2} from "../assets/img2.jpeg";
-import {img3} from "../assets/img3.jpeg";
-import {img4} from "../assets/img4.jpeg";
-import {img5} from "../assets/img5.jpeg";
+import img1 from "../assets/img1.jpeg";
+import img2 from "../assets/img2.jpeg";
+import img3 from "../assets/img3.jpeg";
+import img4 from "../assets/img4.jpeg";
+import img5 from "../assets/img5.jpeg";
 
 export const WeatherContext = createContext();
 
