@@ -290,12 +290,12 @@ const WeatherContextProvider = ({ children }) => {
     : `url(${img1})`;
   }, [current, currentTime, forecast]);
 
-  useEffect(() => {
-    if (!current) return;
-    console.log(current);
-    console.log(forecast);
-    console.log(location);
-  }, [current]);
+  // useEffect(() => {
+  //   if (!current) return;
+  //   console.log(current);
+  //   console.log(forecast);
+  //   console.log(location);
+  // }, [current]);
 
   return (
     <WeatherContext.Provider
