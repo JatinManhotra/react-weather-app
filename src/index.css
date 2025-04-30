@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+  preferredstrategy: "pseudoelements";
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(../Poppins-Regular.ttf);
+}
+
+@utility faint-white {
+  @apply bg-[rgba(255,255,255,0.7)];
+}
+
+
+
+@utility bg-dark-mode {
+  @apply bg-[rgba(17,28,48,0.9)];
+}
+
+@utility opened-sidebar {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@utility closed-sidebar {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
+@layer components {
+  .main-container {
+    @apply scrollbar scrollbar-thumb-sky-400 dark:scrollbar-thumb-sky-600 scrollbar-w-1.5 md:scrollbar-w-2 scrollbar-thumb-rounded-2xl scrollbar-hover:cursor-pointer mt-[2rem] ml-[.5rem] h-[85vh] w-full overflow-y-scroll md:mr-0 md:ml-[7rem] lg:ml-[8rem] xl:mr-[2rem];
+  }
+  .show-all-btn {
+    @apply mr-4 rounded-3xl bg-emerald-300 px-2 py-1.5 text-xs shadow-xs/50 shadow-black hover:cursor-pointer disabled:bg-gray-400 disabled:hover:cursor-no-drop md:mr-0 md:px-4 md:text-sm dark:bg-emerald-500 dark:text-black;
+  }
+  .savedCityDiv {
+    @apply scrollbar scrollbar-thumb-sky-400 dark:scrollbar-thumb-sky-600 scrollbar-h-1.5 scrollbar-w-1.5 scrollbar-thumb-rounded-2xl scrollbar-hover:cursor-pointer mt-4 flex max-h-[14rem] max-w-[100%] flex-col overflow-y-scroll lg:flex lg:max-h-[16rem] lg:max-w-[100%] lg:flex-col lg:overflow-y-scroll xl:max-h-fit xl:flex-row xl:overflow-x-scroll md:max-h-fit md:flex-row md:overflow-x-scroll   xl:mt-2 2xl:mt-4;
+  }
+  .favoriteIcon {
+    @apply absolute top-[-1rem] right-[-1rem] z-50 lg:hidden rounded-full bg-white p-1 text-2xl group-hover:block hover:cursor-pointer md:p-1.5 md:text-3xl xl:top-[-.5rem] xl:right-[-.5rem] xl:p-1 xl:text-2xl 2xl:top-[-1rem] 2xl:right-[-1rem] 2xl:p-1.5 2xl:text-3xl dark:bg-gray-300;
+  }
+  .warningMsg {
+    @apply faint-white dark:bg-dark-mode absolute top-0 left-[50%] z-50 mt-4 hidden translate-x-[-50%] items-center gap-2 rounded-lg px-4 py-2 text-sm whitespace-nowrap opacity-0 transition-all transition-discrete duration-[2s] ease-linear group-active:flex group-active:opacity-100 md:text-lg dark:text-white;
+  }
+  .hourlyForecastDiv {
+    @apply scrollbar scrollbar-thumb-sky-400 dark:scrollbar-thumb-sky-600 scrollbar-h-1.5 scrollbar-thumb-rounded-2xl scrollbar-hover:cursor-pointer flex h-[85%] gap-4 overflow-x-scroll select-none;
+  }
+  .toolTip {
+    @apply absolute top-[-0.3125rem] left-[1.875rem] z-50 mt-1 hidden rounded bg-black px-2 py-1 text-sm whitespace-nowrap text-white group-hover:block;
+  }
+  .sideBar {
+    @apply dark:bg-dark-mode faint-white absolute top-0 bottom-0 left-0 m-4 hidden flex-col justify-between rounded-md p-2 transition-all duration-300 ease-in md:ml-3 md:flex lg:m-4 dark:text-white;
+  }
+
+  .tabs {
+    @apply flex h-fit max-w-fit items-center rounded-2xl bg-blue-500 px-2 py-1 text-xs text-white md:text-base md:whitespace-nowrap lg:text-sm xl:text-sm 2xl:text-base dark:bg-blue-600;
+  }
+}
+
+@layer utilities {
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  .dark input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background-image: url(/img1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 2rem);
+  width: 100vw;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.lottie svg path {
+  stroke: white !important;
+}
